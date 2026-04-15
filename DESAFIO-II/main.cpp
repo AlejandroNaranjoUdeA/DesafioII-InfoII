@@ -2,6 +2,7 @@
 #include <ctime>
 #include "equipo.h"
 #include "partido.h"
+#include "grupo.h"
 
 using namespace std;
 
@@ -9,16 +10,26 @@ int main()
 {
     srand(time(0)); // aleatoriedad
 
-    Equipo Colombia("Colombia", 10);
-    Equipo Brasil("Brasil", 1);
+    Equipo e1("Colombia", 10);
+    Equipo e2("Brasil", 1);
+    Equipo e3("Argentina", 2);
+    Equipo e4("Francia", 3);
 
-    Colombia.crearJugadores();
-    Brasil.crearJugadores();
+    e1.crearJugadores();
+    e2.crearJugadores();
+    e3.crearJugadores();
+    e4.crearJugadores();
 
-    Partido p(&Colombia, &Brasil);
+    Grupo grupoA('A');
 
-    p.simular();
-    p.mostrarResultado();
+    grupoA.agregarEquipo(&e1);
+    grupoA.agregarEquipo(&e2);
+    grupoA.agregarEquipo(&e3);
+    grupoA.agregarEquipo(&e4);
+
+    grupoA.mostrarEquipos();
+    grupoA.simularPartidos();
+
 
     return 0;
 }
