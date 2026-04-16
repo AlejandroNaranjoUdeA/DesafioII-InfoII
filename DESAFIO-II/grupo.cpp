@@ -1,8 +1,8 @@
 #include "grupo.h"
 
-Grupo::Grupo(char n) {
+Grupo::Grupo() {
 
-    nombre= n;
+    nombre= '?';
     numEquipos= 0;
 
 }
@@ -19,7 +19,7 @@ void Grupo::mostrarEquipos(){
     cout << "Grupo " << nombre << ":" << endl;
 
     for(int i=0; i<numEquipos; i++){
-        equipos[i]->mostrarJugadores(); //por ahora muestra toda la informacion
+        cout << equipos[i]->getPais() << endl;
         cout << "-------------------" << endl;
     }
 

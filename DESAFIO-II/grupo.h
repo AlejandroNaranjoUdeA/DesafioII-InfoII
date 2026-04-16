@@ -15,7 +15,7 @@ private:
     int numEquipos;
 
 public:
-    Grupo(char n);
+    Grupo();
 
     // Métodos
     void agregarEquipo(Equipo* e);

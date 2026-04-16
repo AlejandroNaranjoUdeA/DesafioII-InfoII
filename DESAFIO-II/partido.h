@@ -9,8 +9,8 @@ using namespace std;
 class Partido
 {
 private:
-    Equipo* equipo1;
-    Equipo* equipo2;
+    Equipo *equipo1;
+    Equipo *equipo2;
 
     int goles1;
     int goles2;

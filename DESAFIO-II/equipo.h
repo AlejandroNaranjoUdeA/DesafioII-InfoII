@@ -17,12 +17,13 @@ private:
     int numJugadores;
 
 public:
-    Equipo(string p, int r);
+    Equipo();
     ~Equipo(); //destructor
 
     // Métodos
     void crearJugadores();
     void mostrarJugadores();
+    string getPais();
 };
 
 #endif // EQUIPO_H

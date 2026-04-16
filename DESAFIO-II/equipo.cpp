@@ -1,8 +1,8 @@
 #include "equipo.h"
 
-Equipo::Equipo(string p, int r) {
-    pais= p;
-    ranking= r;
+Equipo::Equipo() {
+    pais= "";
+    ranking= 0;
 
     numJugadores= 26;
     jugadores= new Jugador[numJugadores]; //reservamos memoria dinamica para los jugadores
@@ -28,4 +28,8 @@ void Equipo::mostrarJugadores(){
         jugadores[i].mostrar();
     }
 
+}
+
+string Equipo::getPais(){
+    return pais;
 }

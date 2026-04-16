@@ -21,7 +21,7 @@ private:
     int partidosJugados;
 public:
     Jugador();
-    Jugador(string nom, string ape, int num); //destructor
+    Jugador(string nom, string ape, int num);
     // Métodos
     void mostrar();
 
