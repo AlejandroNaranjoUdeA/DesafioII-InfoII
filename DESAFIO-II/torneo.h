@@ -27,6 +27,8 @@ public:
     void crearEquipos();
     void asignarEquiposAGrupos();
     void mostrarGrupos();
+    void simularFaseDeGrupos();
+    void mostrarTablas();
 
 };
 

@@ -9,7 +9,7 @@ using namespace std;
 
 int main()
 {
-    srand(time(0)); // aleatoriedad
+    srand(time(0));
 
     Torneo mundial;
 
@@ -18,6 +18,9 @@ int main()
     mundial.asignarEquiposAGrupos();
 
     mundial.mostrarGrupos();
+
+    mundial.simularFaseDeGrupos();
+    mundial.mostrarTablas();
 
 
     return 0;

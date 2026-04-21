@@ -1,14 +1,12 @@
 #ifndef EQUIPO_H
 #define EQUIPO_H
 
-#include<iostream>
-#include<string.h>
+#include <iostream>
 #include "jugador.h"
 
 using namespace std;
 
-class Equipo
-{
+class Equipo {
 private:
     string pais;
     int ranking;
@@ -16,14 +14,39 @@ private:
     Jugador* jugadores;
     int numJugadores;
 
-public:
-    Equipo();
-    ~Equipo(); //destructor
+    // estadísticas
+    int puntos;
+    int golesFavor;
+    int golesContra;
+    int partidosJugados;
 
-    // Métodos
+public:
+    // constructores
+    Equipo();
+    ~Equipo();
+
+    // gestión de jugadores
     void crearJugadores();
     void mostrarJugadores();
+
+    // setters
+    void setPais(string p);
+    void setRanking(int r);
+
+    // getters
     string getPais();
+
+    // estadísticas
+    void sumarPuntos(int p);
+    void agregarGoles(int gf, int gc);
+    void sumarPartido();
+
+    int getPuntos();
+    int getGolesFavor();
+    int getDiferenciaGoles();
+
+    float getPromedioGolesFavor();
+    float getPromedioGolesContra();
 };
 
 #endif // EQUIPO_H

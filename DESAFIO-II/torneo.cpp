@@ -18,7 +18,8 @@ Torneo::~Torneo(){
 
 void Torneo::crearEquipos(){
     for(int i=0; i<numEquipos; i++){
-        equipos[i]= Equipo();
+        equipos[i].setPais("Pais" + to_string(i+1));
+        //equipos[i]= Equipo();
         equipos[i].crearJugadores();
     }
 
@@ -46,6 +47,23 @@ void Torneo::asignarEquiposAGrupos(){
 void Torneo::mostrarGrupos() {
     for (int i = 0; i < numGrupos; i++) {
         grupos[i].mostrarEquipos();
+        cout << "====================" << endl;
+    }
+
+}
+
+void Torneo::simularFaseDeGrupos(){
+    cout << "===== FASE DE GRUPOS =====" << endl;
+    for(int i=0; i<numGrupos; i++){
+        grupos[i].simularPartidos();
+        cout << "==========================" << endl;
+    }
+
+}
+
+void Torneo::mostrarTablas(){
+    for(int i=0; i<numGrupos; i++){
+        grupos[i].mostrarTabla(); //esta funcion falta por implementar
         cout << "====================" << endl;
     }
 

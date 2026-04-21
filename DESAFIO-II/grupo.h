@@ -21,6 +21,8 @@ public:
     void agregarEquipo(Equipo* e);
     void mostrarEquipos();
     void simularPartidos();
+    void mostrarTabla();
+    void ordenarTabla();
 };
 
 #endif // GRUPO_H
