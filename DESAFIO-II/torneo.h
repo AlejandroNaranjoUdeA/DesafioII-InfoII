@@ -11,6 +11,8 @@ class Torneo
 {
 private:
     Equipo* equipos;
+    Equipo** clasificados;
+    int numClasificados;
     int numEquipos;
 
     Grupo* grupos;
@@ -29,6 +31,9 @@ public:
     void mostrarGrupos();
     void simularFaseDeGrupos();
     void mostrarTablas();
+
+    void clasificarEquipos();
+    void mostrarClasificados();
 
 };
 

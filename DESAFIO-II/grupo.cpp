@@ -84,3 +84,11 @@ void Grupo::mostrarTabla() {
              << endl;
     }
 }
+
+
+Equipo* Grupo::getEquipo(int i) {
+    if (i >= 0 && i < numEquipos) {
+        return equipos[i];
+    }
+    return nullptr;
+}

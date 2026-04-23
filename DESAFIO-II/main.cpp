@@ -22,6 +22,9 @@ int main()
     mundial.simularFaseDeGrupos();
     mundial.mostrarTablas();
 
+    mundial.clasificarEquipos();
+    mundial.mostrarClasificados();
+
 
     return 0;
 }

@@ -23,6 +23,8 @@ public:
     void simularPartidos();
     void mostrarTabla();
     void ordenarTabla();
+
+    Equipo* getEquipo(int i);
 };
 
 #endif // GRUPO_H
