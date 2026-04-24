@@ -13,7 +13,7 @@ int main()
 
     Torneo mundial;
 
-    mundial.crearEquipos();
+    mundial.cargarEquiposDesdeCSV();
     mundial.crearGrupos();
     mundial.asignarEquiposAGrupos();
 

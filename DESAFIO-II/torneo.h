@@ -38,6 +38,8 @@ public:
     void simularEliminatorias();
     Equipo* jugarPartidoEliminacion(Equipo* e1, Equipo* e2);
 
+    void cargarEquiposDesdeCSV();
+
 };
 
 #endif // TORNEO_H

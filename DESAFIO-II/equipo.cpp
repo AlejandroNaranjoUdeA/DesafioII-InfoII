@@ -12,6 +12,9 @@ Equipo::Equipo() {
     golesFavor = 0;
     golesContra = 0;
     partidosJugados = 0;
+
+    golesFavor = golesHistoricos;
+    golesContra = golesContraHistoricos;
 }
 
 // destructor
@@ -88,4 +91,12 @@ float Equipo::getPromedioGolesFavor() {
 float Equipo::getPromedioGolesContra() {
     if (partidosJugados == 0) return 1.2;
     return (float)golesContra / partidosJugados;
+}
+
+void Equipo::setGolesHistoricos(int g){
+    golesHistoricos = g;
+}
+
+void Equipo::setGolesContraHistoricos(int g){
+    golesContraHistoricos = g;
 }

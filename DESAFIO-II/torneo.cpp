@@ -1,4 +1,6 @@
 #include "torneo.h"
+#include <fstream>
+#include <sstream>
 
 Torneo::Torneo() {
 
@@ -20,6 +22,14 @@ Torneo::~Torneo(){
 }
 
 void Torneo::crearEquipos(){
+
+    string paises[48]= {
+
+};
+
+
+
+
     for(int i=0; i<numEquipos; i++){
         equipos[i].setPais("Pais" + to_string(i+1));
         //equipos[i]= Equipo();
@@ -194,6 +204,62 @@ void Torneo::simularEliminatorias(){
 
     cout << " CAMPEON: " << rondaActual[0]->getPais() << endl;
 
+}
+
+void Torneo::cargarEquiposDesdeCSV(){
+
+    ifstream archivo("selecciones_clasificadas_mundial.csv");
+
+    if(!archivo.is_open()){
+        cout<<"Error al abrir el archivo"<<endl;
+        return;
+    }
+
+    string linea;
+
+    //nos saltamos las 2 primeras lineas que son innecesarias:
+
+    getline(archivo, linea);
+    getline(archivo, linea);
+
+    int i=0;
+
+    while(getline(archivo, linea) && i<numEquipos){
+
+        stringstream ss(linea);
+        string campo;
+
+        // columnas
+        string rankingStr, pais, gfStr, gcStr;
+
+        getline(ss, rankingStr, ';'); // 0
+        getline(ss, pais, ';');       // 1
+
+        // saltar columnas innecesarias (2,3,4)
+        for (int j = 0; j < 3; j++) {
+            getline(ss, campo, ';');
+        }
+
+        getline(ss, gfStr, ';'); // 5 goles a favor
+        getline(ss, gcStr, ';'); // 6 goles en contra
+
+        int ranking = stoi(rankingStr);
+        int gf = stoi(gfStr);
+        int gc = stoi(gcStr);
+
+        equipos[i].setPais(pais);
+        equipos[i].setRanking(ranking);
+
+        // 🔥 guardar datos históricos
+        equipos[i].setGolesHistoricos(gf);
+        equipos[i].setGolesContraHistoricos(gc);
+
+        equipos[i].crearJugadores();
+
+        i++;
+    }
+
+    archivo.close();
 
 }
 

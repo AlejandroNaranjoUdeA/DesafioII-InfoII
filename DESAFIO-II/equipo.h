@@ -47,6 +47,12 @@ public:
 
     float getPromedioGolesFavor();
     float getPromedioGolesContra();
+
+    int golesHistoricos;
+    int golesContraHistoricos;
+
+    void setGolesHistoricos(int g);
+    void setGolesContraHistoricos(int g);
 };
 
 #endif // EQUIPO_H
