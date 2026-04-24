@@ -136,5 +136,66 @@ void Torneo::mostrarClasificados(){
 
 }
 
+Equipo* Torneo::jugarPartidoEliminacion(Equipo* e1, Equipo* e2){
+
+    Partido p(e1,e2);
+    p.simular();
+    p.mostrarResultado();
+
+    //desempate:
+    if(rand()%2==0){
+        return e1;
+    }
+    else{
+        return e2;
+    }
+
+}
+
+void Torneo::simularEliminatorias(){
+
+    cout << "===== ELIMINATORIAS =====" << endl;
+
+    Equipo* rondaActual[32];
+
+    //copiamos los clasificados:
+    for(int i=0; i<32; i++){
+        rondaActual[i]= clasificados[i];
+    }
+
+    int equiposRestantes= 32;
+
+    while(equiposRestantes>1){
+
+        cout << "---- RONDA DE " << equiposRestantes << " ----" << endl;
+
+        Equipo* siguienteRonda[32];
+        int index =0;
+
+        for(int i=0; i<equiposRestantes; i+= 2){
+
+            cout<<rondaActual[i]->getPais()<<" vs "<<rondaActual[i+1]->getPais()<<endl;
+
+            Equipo *ganador= jugarPartidoEliminacion(rondaActual[i], rondaActual[i+1]);
+
+            cout << "Ganador: " << ganador->getPais() << endl;
+            cout << "-------------------" << endl;
+
+            siguienteRonda[index++]= ganador;
+        }
+
+        //seguimos con otra ronda
+        equiposRestantes /= 2;
+
+        for(int i=0; i<equiposRestantes; i++){
+            rondaActual[i]= siguienteRonda[i];
+        }
+    }
+
+    cout << " CAMPEON: " << rondaActual[0]->getPais() << endl;
+
+
+}
+
 
 

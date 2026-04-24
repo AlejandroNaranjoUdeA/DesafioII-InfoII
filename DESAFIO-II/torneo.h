@@ -35,6 +35,9 @@ public:
     void clasificarEquipos();
     void mostrarClasificados();
 
+    void simularEliminatorias();
+    Equipo* jugarPartidoEliminacion(Equipo* e1, Equipo* e2);
+
 };
 
 #endif // TORNEO_H

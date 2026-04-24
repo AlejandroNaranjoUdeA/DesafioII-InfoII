@@ -25,6 +25,7 @@ int main()
     mundial.clasificarEquipos();
     mundial.mostrarClasificados();
 
+    mundial.simularEliminatorias();
 
     return 0;
 }
