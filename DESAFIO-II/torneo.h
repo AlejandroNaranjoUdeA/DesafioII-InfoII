@@ -39,6 +39,7 @@ public:
     Equipo* jugarPartidoEliminacion(Equipo* e1, Equipo* e2);
 
     void cargarEquiposDesdeCSV();
+    void guardarDatosJugadores();
 
 };
 

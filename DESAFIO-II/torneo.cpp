@@ -263,5 +263,33 @@ void Torneo::cargarEquiposDesdeCSV(){
 
 }
 
+void Torneo::guardarDatosJugadores(){
 
+    ofstream archivo("jugadores.txt");
+
+    if(!archivo.is_open()){
+        cout<<"Error al crear el archivo"<<endl;
+        return;
+    }
+
+    for(int i=0; i<numEquipos; i++){
+
+        archivo<<"Equipo: "<<equipos[i].getPais()<<endl;
+
+        for(int j=0; j<26; j++){
+
+            Jugador* jugador= equipos[i].getJugador(j);
+
+            archivo << "Jugador "<< jugador->getNumero()<< " | Goles: "<< jugador->getGoles()<< endl;
+        }
+
+        archivo << "----------------------" << endl;
+
+    }
+
+    archivo.close();
+
+    cout << "Datos guardados correctamente" << endl;
+
+}
 

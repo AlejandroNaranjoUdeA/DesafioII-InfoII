@@ -53,6 +53,8 @@ public:
 
     void setGolesHistoricos(int g);
     void setGolesContraHistoricos(int g);
+
+    Jugador* getJugador(int i);
 };
 
 #endif // EQUIPO_H

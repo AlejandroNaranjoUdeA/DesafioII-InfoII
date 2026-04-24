@@ -26,6 +26,7 @@ int main()
     mundial.mostrarClasificados();
 
     mundial.simularEliminatorias();
+    mundial.guardarDatosJugadores();
 
     return 0;
 }

@@ -100,3 +100,9 @@ void Equipo::setGolesHistoricos(int g){
 void Equipo::setGolesContraHistoricos(int g){
     golesContraHistoricos = g;
 }
+
+Jugador* Equipo::getJugador(int i){
+    if(i >= 0 && i < numJugadores)
+        return &jugadores[i];
+    return nullptr;
+}
