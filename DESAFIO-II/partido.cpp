@@ -50,6 +50,19 @@ void Partido::simular(){
         equipo2->sumarPuntos(1);
     }
 
+    //asignar goles a jugadores del equipo 1:
+    for(int i=0; i<goles1; i++){
+        int j= rand() % 26;
+        equipo1->getJugador(j)->sumarGol();
+    }
+
+    //asignar goles a jugadores del equipo 2:
+    for(int i=0; i<goles2; i++){
+        int j= rand() % 26;
+        equipo2->getJugador(j)->sumarGol();
+    }
+
+
 }
 
 void Partido::mostrarResultado(){
