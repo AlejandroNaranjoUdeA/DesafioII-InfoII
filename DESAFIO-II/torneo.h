@@ -41,6 +41,8 @@ public:
     void cargarEquiposDesdeCSV();
     void guardarDatosJugadores();
 
+    void mostrarGoleadores();
+
 };
 
 #endif // TORNEO_H

@@ -30,11 +30,11 @@ void Torneo::crearEquipos(){
 
 
 
-    for(int i=0; i<numEquipos; i++){
-        equipos[i].setPais("Pais" + to_string(i+1));
-        //equipos[i]= Equipo();
-        equipos[i].crearJugadores();
-    }
+for(int i=0; i<numEquipos; i++){
+    equipos[i].setPais("Pais" + to_string(i+1));
+    //equipos[i]= Equipo();
+    equipos[i].crearJugadores();
+}
 
 }
 
@@ -293,3 +293,25 @@ void Torneo::guardarDatosJugadores(){
 
 }
 
+
+void Torneo::mostrarGoleadores() {
+
+    cout << "===== GOLEADORES =====" << endl;
+
+    for(int i = 0; i < numEquipos; i++){
+
+        for(int j = 0; j < 26; j++){
+
+            Jugador* jugador = equipos[i].getJugador(j);
+
+            if(jugador->getGoles() > 0){
+
+                cout << jugador->getGoles() << " goles - "
+                     << equipos[i].getPais()
+                     << " - Jugador "
+                     << jugador->getNumero()
+                     << endl;
+            }
+        }
+    }
+}
